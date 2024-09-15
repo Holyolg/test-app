@@ -27,16 +27,17 @@ export const AsideBlock: FC<Props> = ({ className }) => {
         <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
-      <WhiteBlock>
-        <div className="flex">
+      <WhiteBlock className="text-nowrap">
+        <div className="flex items-center">
           <Phone size={16} className="mr-2" />
           <span>07911 654321</span>
         </div>
-        <div className="flex">
+
+        <div className="flex items-center">
           <Mail size={16} className="mr-2" />
           <span>avd.yana@videorollnet</span>
         </div>
-        <div className="flex">
+        <div className="flex gap-3">
           <Linkedin size={16} />
           <Facebook size={16} />
           <Twitter size={16} />
@@ -54,23 +55,23 @@ export const AsideBlock: FC<Props> = ({ className }) => {
       </WhiteBlock>
       <WhiteBlock>
         <div className="flex flex-col gap-2">
-          <div className="flex">
+          <div className="flex items-center">
             <Hash size={16} className="mr-2" />
             <span>5</span>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <Clock size={16} className="mr-2" />
             <span>Full-Time</span>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <Users size={16} className="mr-2" />
             <span>Operations</span>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <Globe size={16} className="mr-2" />
             <span>Europe</span>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <MapPin size={16} className="mr-2" />
             <span>London, UK</span>
           </div>
@@ -79,23 +80,23 @@ export const AsideBlock: FC<Props> = ({ className }) => {
       <WhiteBlock>
         <div className="">Direct Reports</div>
         <div className="flex flex-col gap-2">
-          <div className="flex">
+          <div className="flex items-center">
             <CircleUserRound size={16} className="mr-2" />
             <span>Shane</span>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <CircleUserRound size={16} className="mr-2" />
             <span>Nathan</span>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <CircleUserRound size={16} className="mr-2" />
             <span>Mitchell</span>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <CircleUserRound size={16} className="mr-2" />
             <span>Philip</span>
           </div>
-          <div className="flex">
+          <div className="flex items-center">
             <Users size={16} className="mr-2" />
             <span>4 more</span>
           </div>

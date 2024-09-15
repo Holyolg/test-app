@@ -8,7 +8,7 @@ type Props = {
 
 export const WhiteBlock: FC<PropsWithChildren<Props>> = ({ className, children }) => {
   return (
-    <div className={cn("bg-white w-full flex flex-col gap-4 rounded-lg p-6", className)}>
+    <div className={cn("bg-white w-full flex flex-col gap-4 rounded-lg text-sm p-6", className)}>
       {children}
     </div>
   );

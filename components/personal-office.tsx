@@ -1,32 +1,46 @@
-import { Bell, CircleHelp, Settings } from "lucide-react";
+"use client";
+import { Bell, CircleHelp, LogOut, Settings } from "lucide-react";
 import { FC } from "react";
 
 import { cn } from "@/lib/utils";
+import { useAuthStore } from "@/store/auth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 type Props = {
-	className?: string;
+  className?: string;
 };
 
 export const PersonalOffice: FC<Props> = ({ className }) => {
-	return (
-		<nav className={cn("flex items-center gap-6", className)}>
-			<Link href={"/my-info"}>
-				<Settings size={24} />
-			</Link>
-			<Link href={"/my-info"}>
-				<CircleHelp size={24} />
-			</Link>
-			<Link href={"/my-info"}>
-				<Bell size={24} />
-			</Link>
-			<Link href={"/my-info"}>
-				<Avatar className="size-[38px]">
-					<AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-					<AvatarFallback>CN</AvatarFallback>
-				</Avatar>
-			</Link>
-		</nav>
-	);
+  const router = useRouter();
+  const handleLogout = () => {
+    document.cookie = "access_token=; Max-Age=-1;";
+    document.cookie = "refresh_token=; Max-Age=-1;";
+    useAuthStore.getState().setAuthenticated(false);
+    router.push("/auth");
+  };
+
+  return (
+    <nav className={cn("flex items-center gap-6", className)}>
+      <Link href={"/my-info"}>
+        <Settings size={24} />
+      </Link>
+      <Link href={"/my-info"}>
+        <CircleHelp size={24} />
+      </Link>
+      <Link href={"/my-info"}>
+        <Bell size={24} />
+      </Link>
+      <button onClick={handleLogout}>
+        <LogOut size={24} />
+      </button>
+      <Link href={"/my-info"}>
+        <Avatar className="size-[38px]">
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </Link>
+    </nav>
+  );
 };
