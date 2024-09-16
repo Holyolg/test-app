@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Установка
 
-## Getting Started
+```bash
+npm i
+```
 
-First, run the development server:
+## Запуск
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Открывается на [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## О приложении
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Тестовое задание
 
-## Learn More
+```
+/auth - страница аутентификации
+```
 
-To learn more about Next.js, take a look at the following resources:
+Производится аутентификация путем GraphQl запроса к https://api.escuelajs.co/graphql. В ответ приходит JWT-токен, которые сохраняются в cookie. Через Zustand устанавливается флаг авторизации, сохраняемый в localStorage. Проверка сессии производится через middleware
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+/my-info - страница My-info
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Страница, которая обращается через GraphQl к https://api.escuelajs.co/graphql. В ответ приходят имя и аватар пользователя. Кнопка выхода из аккаунта удаляет JWT-токены и устанавливает флаг авторизации в Zustand на false.
 
-## Deploy on Vercel
+## Деплой на Versel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Сайт](https://www.example.com)

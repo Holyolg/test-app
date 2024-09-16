@@ -24,7 +24,7 @@ export const GrayBlock: FC<PropsWithChildren<Props>> = ({
     <div className="flex flex-col">
       <div
         className={cn(
-          "w-[264px] h-[138px] flex flex-col justify-center items-center rounded-lg bg-[#F0F3F8] gap-1",
+          "w-[264px] h-[138px] flex flex-col justify-center items-center rounded-xl bg-[#F0F3F8] gap-1",
           className
         )}>
         <p className="text-xl font-semibold">{title}</p>
