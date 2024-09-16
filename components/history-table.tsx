@@ -61,8 +61,9 @@ const history = [
 
 export const HistoryTable: FC<Props> = ({ className }) => {
 	return (
-		<div className={cn("flex items-center text-base", className)}>
-			<Table>
+		<div
+			className={cn("flex items-center text-base overflow-x-auto", className)}>
+			<Table className="w-[1015px]">
 				<TableHeader>
 					<TableRow className=" bg-[--light-blue]">
 						<TableHead className="w-[100px]">

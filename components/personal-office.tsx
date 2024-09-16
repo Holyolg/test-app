@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const PersonalOffice: FC<Props> = ({ className }) => {
-	const { loading, error, data } = useQuery(MY_PROFILE);
+	const { data } = useQuery(MY_PROFILE);
 	const router = useRouter();
 	const handleLogout = () => {
 		document.cookie = "access_token=; Max-Age=-1;";
