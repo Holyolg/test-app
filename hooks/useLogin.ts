@@ -1,3 +1,4 @@
+import { Login } from "@/@types/graphql";
 import { LOGIN_USER } from "@/app/graphql/mutations";
 import { useMutation } from "@apollo/client";
 import { setCookie } from "cookies-next";
@@ -11,7 +12,7 @@ export const useLogin = () => {
 
   const auth = async (email: string, password: string) => {
     try {
-      const { data } = await login({
+      const { data }: { data?: Login } = await login({
         variables: { email, password },
       });
       if (!data?.login) {

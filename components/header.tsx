@@ -2,8 +2,8 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FC } from "react";
 import { Container } from "./container";
-import { MobileAvatar } from "./mobile-avatar";
 import { MobileNavButton } from "./mobile-nav-button";
+import { MyAvatar } from "./my-avatar";
 import { PersonalOffice } from "./personal-office";
 import { SearchInput } from "./search-input";
 
@@ -38,9 +38,9 @@ export const Header: FC<Props> = ({ className }) => {
           </Link>
         </nav>
         <SearchInput />
-        <div className="flex gap-6">
-          <MobileNavButton className="xl:hidden" />
-          <MobileAvatar className="xl:hidden" />
+        <div className="flex gap-6 xl:hidden">
+          <MobileNavButton />
+          <MyAvatar className="size-[38px]" />
         </div>
         <PersonalOffice className="hidden xl:flex" />
       </header>

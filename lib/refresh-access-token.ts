@@ -1,3 +1,4 @@
+import { RefreshToken } from "@/@types/graphql";
 import client from "@/app/apollo/client";
 import { REFRESH_TOKEN } from "@/app/graphql/mutations";
 import { setCookie } from "cookies-next";
@@ -9,10 +10,10 @@ export const refreshAccessToken = async () => {
     throw new Error("Refresh token missing");
   }
 
-  const { data } = await client.mutate({
+  const { data }: { data?: RefreshToken } = (await client.mutate({
     mutation: REFRESH_TOKEN,
     variables: { refreshToken },
-  });
+  })) as { data: RefreshToken };
 
   if (data && data.refreshToken) {
     const { access_token, refresh_token } = data.refreshToken;
