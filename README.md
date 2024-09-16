@@ -30,4 +30,4 @@ npm run dev
 
 ## Деплой на Versel
 
-[Сайт](https://www.example.com)
+[Сайт](https://test-app-sigma-eight.vercel.app/)
