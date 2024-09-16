@@ -5,10 +5,9 @@ import { FC } from "react";
 
 interface Props {
   className?: string;
-  name?: string;
 }
 
-const Menu: FC<Props> = ({ className, name }) => {
+const Menu: FC<Props> = ({ className }) => {
   return (
     <nav
       className={cn(
