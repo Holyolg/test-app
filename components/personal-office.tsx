@@ -2,11 +2,8 @@
 import { Bell, CircleHelp, LogOut, Settings } from "lucide-react";
 import { FC } from "react";
 
-import { myProfile } from "@/@types/graphql";
-import { MY_PROFILE } from "@/app/graphql/query";
 import { cn } from "@/lib/utils";
 import { useAuthStore } from "@/store/auth";
-import { useQuery } from "@apollo/client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { MyAvatar } from "./my-avatar";
@@ -16,7 +13,6 @@ type Props = {
 };
 
 export const PersonalOffice: FC<Props> = ({ className }) => {
-  const { data } = useQuery<myProfile>(MY_PROFILE);
   const router = useRouter();
   const handleLogout = () => {
     document.cookie = "access_token=; Max-Age=-1;";
@@ -40,7 +36,7 @@ export const PersonalOffice: FC<Props> = ({ className }) => {
         <LogOut size={24} />
       </button>
       <Link href={"/my-info"}>
-        <MyAvatar className="size-[38px]"/>
+        <MyAvatar className="size-[38px]" />
       </Link>
     </nav>
   );
